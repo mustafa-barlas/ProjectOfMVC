@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "AddAbout";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>AddAbout</h1>
+<div class="Model" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">hakımızda metin girişi</h2>
+            </div>
+            <form method="post" action="/About/AddAbout/">
+                <div class="modal-body">
+                    <label>About Details 1</label>
+                    <input type="text" name="AboutDetails1" class="form-control" />
+                    <br />
+                     <label>About Details 2</label>
+                    <input type="text" name="AboutDetails2" class="form-control" />
+                    <br />
+                     <label>About Image 1</label>
+                    <input type="text" name="AboutImage1" class="form-control" />
+                    <br />
+                     <label>About Image 2</label>
+                    <input type="text" name="AboutImage2" class="form-control" />
+                    <br />
+                    <button class="btn btn-info">kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

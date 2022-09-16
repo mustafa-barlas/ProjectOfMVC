@@ -1,0 +1,31 @@
+﻿@using EntityLayer.Concrete
+@model List<About>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Hakımda Veri Listesi</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Hakımda Yazısı</th>
+        <th>Hakımda Detayları</th>
+        <th>Hakımda Yazısını aktif et</th>
+        <th>Hakımda Yazısını pasif et</th>
+        <th>Düzenle</th>
+    </tr>
+    @foreach (var item in Model)
+   {
+       <tr>
+       <td>@item.AboutID</td>
+       <td>@item.AboutDetails1</td>
+       <td><a hred="#" class="btn btn-success"> aktif et </a></td>
+       <td><a hred="#" class="btn btn-danger"> pasif et </a></td>
+       <td ><a href="About/EditAbout/@item.AboutID" class="btn btn-success">Güncelle</a></td>
+       </tr>
+   }
+</table>
+<form > <a style="color:darkgreen" href="/About/AddAbout/"> Yeni Yazı Girişi</a></form>
+

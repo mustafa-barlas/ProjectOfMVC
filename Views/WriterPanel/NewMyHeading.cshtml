@@ -1,0 +1,29 @@
+﻿@model EntityLayer.Concrete.Heading
+@{
+    ViewData["Title"] = "NewMyHeading";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+
+<h1>Başlık Ekleme Sayfası</h1>
+<br />
+@using (Html.BeginForm("NewMyHeading", "WriterPanel", FormMethod.Post))
+{
+    <div class="form-group">
+         @Html.HiddenFor(x => x.HeadingDate)
+        @Html.HiddenFor(x => x.WriterID)
+        @Html.HiddenFor(x => x.HeadingID)
+        @Html.Label("Başlık  adı")
+        @Html.TextBoxFor(x => x.HeadingName, new {@class="form-control"})
+        @Html.ValidationMessageFor(x => x.HeadingName , "", new { @style="color:red" })
+         <br>
+        @Html.Label("Kategori Adı")
+        @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)  ViewBag.vlcc, new {@class="form-control"})
+         <br>
+         @Html.Label("Başlık  Resmi")
+        @Html.TextBoxFor(x => x.HeadingImage, new {@class="form-control"})
+        @Html.ValidationMessageFor(x => x.HeadingImage , "", new { @style="color:red" })
+         <br>
+         <button class="btn btn-info">Ekle</button>
+    </div>
+}

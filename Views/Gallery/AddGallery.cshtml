@@ -1,0 +1,28 @@
+﻿@model EntityLayer.Concrete.ImageFile
+@{
+    ViewData["Title"] = "AddGallery";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link  href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+
+<h1>Görsel ekleme sayfası</h1>
+<br />
+@using (Html.BeginForm("AddGallery", "Gallery", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Görsel Adı")
+        @Html.TextBoxFor(x=>x.ImageName, new{@class="form-control"})
+        @Html.ValidationMessageFor(x => x.ImageName)
+        <br />
+        <br />
+        @Html.Label("Görsel Url & Dosya Yolu")
+         @Html.TextAreaFor(x=>x.ImagePath, new{@class="form-control"})
+         @Html.ValidationMessageFor(x => x.ImagePath)
+         <br />
+         <button class="btn btn-warning">Kaydet</button>
+    </div>
+}
+
+
